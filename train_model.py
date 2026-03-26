@@ -29,6 +29,7 @@ for client in clients:
 global_model = models[0]
 
 # Save model
-pickle.dump(global_model, open("model.pkl","wb"))
+import joblib  # 1️⃣ add this at the top
+joblib.dump(global_model, "model.pkl")
 
 print("Federated Global Model Created")
