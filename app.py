@@ -6,7 +6,8 @@ import numpy as np
 st.title("AI Student Stress Detection System (Federated Learning)")
 
 # Load model
-model = pickle.load(open("model.pkl", "rb"))
+import joblib
+joblib.dump(model, "model.pkl")
 
 # Input Section
 st.header("Enter Student Details")
