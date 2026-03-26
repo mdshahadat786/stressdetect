@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
 # Title
@@ -7,8 +7,7 @@ st.title("AI Student Stress Detection System (Federated Learning)")
 
 # Load model safely
 try:
-    with open("model.pkl", "rb") as f:
-        model = pickle.load(f)
+    model = joblib.load("model.pkl")
     st.success("Model loaded successfully ✅")
 except Exception as e:
     st.error(f"Model load failed: {e}")
